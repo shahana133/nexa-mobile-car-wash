@@ -1,12 +1,13 @@
 import "./Navbar.css";
+import logo from "../assets/nexa-logo.jpg";
 
 function Navbar() {
   return (
     <nav className="navbar">
 
-      <a href="/" className="navbar-logo">
-        <img src="/src/assets/nexa-logo.jpg" alt="NEXA AutoCare" />
-      </a>
+       <a href="/" className="navbar-logo">
+          <img src={logo} alt="NEXA AutoCare" />
+       </a>
 
       <div className="navbar-links">
         <a href="#services">Services</a>
