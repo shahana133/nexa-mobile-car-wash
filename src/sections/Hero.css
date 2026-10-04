@@ -1,0 +1,274 @@
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.75) 45%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    url("../assets/nexa-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.75) 45%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  box-shadow:
+    0 0 80px rgba(255, 255, 255, 0.04),
+    inset 0 0 80px rgba(255, 255, 255, 0.03);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 7%;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #bdbdbd;
+}
+
+.hero-label::before {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: #ffffff;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: #a8a8a8;
+}
+
+.hero-description {
+  max-width: 560px;
+  margin-top: 35px;
+  color: #b5b5b5;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 17px 28px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transition: 0.3s ease;
+}
+
+.btn-call {
+  background: #ffffff;
+  color: #050505;
+}
+
+.btn-call:hover {
+  background: #d8d8d8;
+  transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.btn-whatsapp:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+.hero-location {
+  margin-top: 55px;
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.hero-location span {
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: 100px 24px 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(45px, 14vw, 70px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+  }
+
+  .hero-location {
+    margin-top: 35px;
+    line-height: 1.8;
+  }
+
+  .hero::after {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}
+/* Premium CTA Buttons */
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.hero-buttons a {
+  min-width: 210px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.hero-buttons small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  opacity: 0.65;
+}
+
+.hero-buttons strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.btn-call {
+  background: #ffffff;
+  color: #080808;
+}
+
+.btn-call .btn-icon {
+  background: #080808;
+  color: #ffffff;
+}
+
+.btn-call:hover {
+  transform: translateY(-3px);
+  background: #e8e8e8;
+}
+
+.btn-whatsapp {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.btn-whatsapp .btn-icon {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+  }
+}
